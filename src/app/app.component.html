@@ -1,0 +1,26 @@
+<!--Tom Smolarek 1801495-->
+<ion-app>
+  <ion-split-pane>
+    <ion-menu>
+      <ion-header>
+        <!--this part is creating menu bar on top of the screen-->
+        <ion-toolbar color="secondary">
+          <ion-title>Menu</ion-title>
+        </ion-toolbar>
+      </ion-header>
+      <ion-content padding>
+        <!--this part is changing the side menu and gives it some actions-->
+        <ion-list>
+          <ion-menu-toggle *ngFor="let p of appPage">
+            <ion-item [routerLink]="p.url" [routerDirection]="'root'">
+              <ion-icon slot="start" [name]="p.icon"></ion-icon>
+              <ion-label>{{p.title}}</ion-label>
+            </ion-item>
+          </ion-menu-toggle>
+        </ion-list>
+      </ion-content>
+    </ion-menu>
+    <ion-router-outlet main>
+    </ion-router-outlet>
+  </ion-split-pane>
+</ion-app>
